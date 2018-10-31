@@ -5,6 +5,12 @@ changed_tests := `git status --porcelain | grep '^\(M\| M\|A\| A\)' | awk '{ pri
 install:
 	pip install -e .
 
+package:
+	bash ./etc/package.bash
+
+upload: package
+	bash ./etc/devpi_upload.bash
+
 test:
 	@echo "Full test run starting..."
 	@time docker-compose run test tox
