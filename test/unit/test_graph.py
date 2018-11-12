@@ -10,7 +10,6 @@ import dbt.flags
 import dbt.linker
 import dbt.model
 import dbt.config
-import dbt.templates
 import dbt.utils
 
 import networkx as nx
